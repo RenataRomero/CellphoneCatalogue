@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<link
+	href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	rel="stylesheet">
+<script src="//code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script
+	src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+<script
+	src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+
+	<div class="container">
+		<form class="form-horizontal" method="post" action="rest/cellphone">
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="email">Brand:</label>
+				<div class="col-sm-10">
+					<input name="brand" type="text" class="form-control" id="brand"
+						placeholder="Enter the brand">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="pwd">Model:</label>
+				<div class="col-sm-10">
+					<input name="model" type="text" class="form-control" id="model"
+						placeholder="Enter the model">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="pwd">Price:</label>
+				<div class="col-sm-10">
+					<input name="price" type="text" class="form-control" id="price"
+						placeholder="Enter the price">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="pwd">Release:</label>
+				<div class="col-sm-10">
+					<input name="release" type="text" class="form-control" id="release"
+						placeholder="Enter the release">
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-offset-2 col-sm-10">
+					<button type="submit" class="btn btn-default">Submit</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

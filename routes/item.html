@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+	rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+	integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+	integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+	crossorigin="anonymous"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+	integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+	crossorigin="anonymous"></script>
+
+<script>
+
+		function loadItem(){
+			window.alert("QUE PEDO QUE PEZ");
+			fetch('http://localhost:3000/cellphone/test', { method: 'get' })
+			  .then(res => res.json()) // Return a promise that will contain the response body as an object given the response stream.
+			  .then(data => {
+			    console.log(data);
+					// var cellphones = data.map(cellphone => cellphone.brand);
+					// console.log(cellphones);
+			    // var characters = data.results.map(character => character.name);
+			    // console.log(characters);
+			    // var select = document.getElementById("charactersName");
+			    // characters.forEach(character => {
+			    //     var opt = document.createElement('option');
+			    //     opt.innerHTML = character;
+			    //     opt.value = character;
+			    //     select.appendChild(opt);
+			    // });
+			  })
+			  .catch(error => {
+					window.alert("LA CAGUE");
+					//console.log("There was an error:", error);
+				}); // If an error occurs, just console it.
+
+				fetch('https://swapi.co/api/people/', { method: 'get' })
+				  .then(res => res.json()) // Return a promise that will contain the response body as an object given the response stream.
+				  .then(data => {
+						console.log("API: ",data);
+				    console.log(data.count);
+				    var characters = data.results.map(character => character.name);
+				    console.log(characters);
+				  })
+				  .catch(error => { console.log("There was an error:", error); }); // If an error occurs, just console it.
+
+
+		}
+
+    </script>
+</head>
+
+<body onload="loadItem()">
+
+	<div class="container">
+		<form class="form-horizontal" method="post" action="rest/cellphone">
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="email">Brand:</label>
+				<div class="col-sm-10">
+					<input disabled="true" name="brand" type="text" class="form-control" id="brand"
+						placeholder="Enter the brand">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="pwd">Model:</label>
+				<div class="col-sm-10">
+					<input disabled="true" name="model" type="text" class="form-control" id="model"
+						placeholder="Enter the model">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="pwd">Price:</label>
+				<div class="col-sm-10">
+					<input disabled="true" name="price" type="text" class="form-control" id="price"
+						placeholder="Enter the price">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="control-label col-sm-2" for="pwd">Release:</label>
+				<div class="col-sm-10">
+					<input disabled="true" name="release" type="text" class="form-control" id="release"
+						placeholder="Enter the release">
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
